@@ -1,4 +1,4 @@
-/* global gapi */
+
 
 import React from 'react';
 import { GoogleLogin } from '@react-oauth/google';
@@ -14,7 +14,7 @@ function Login() {
     console.log("User Email:", email);
 
     // Navigate to the new page with email as state
-    navigate('/email', { state: { email } });
+    navigate('/loggedin', { state: { email } });
   };
 
   const handleError = () => {

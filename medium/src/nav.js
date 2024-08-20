@@ -89,6 +89,9 @@ export default function PrimarySearchAppBar() {
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
+    const logoutFunction = () => {
+        window.location.href = "http://localhost:3000";
+    };
 
     const menuId = 'primary-search-account-menu';
     const renderMenu = (
@@ -134,7 +137,7 @@ export default function PrimarySearchAppBar() {
             </Box>
 
             <MenuItem onClick={handleMenuClose}><DashboardIcon sx={{paddingRight : '4px'}}></DashboardIcon> My DashBoard</MenuItem>
-            <MenuItem onClick={handleMenuClose}> <LoginIcon sx={{paddingRight : '4px'}}></LoginIcon>Log Out</MenuItem>
+            <MenuItem onClick={logoutFunction}> <LoginIcon sx={{paddingRight : '4px'}}></LoginIcon>Log Out</MenuItem>
             
         </Menu>
     );

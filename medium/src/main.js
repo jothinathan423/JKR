@@ -1,10 +1,18 @@
-import { Box, Container,Button } from '@mui/material';
+import React from 'react';
+import { Box, Container, Button } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import {Google as GoogleIcon,Facebook as FacebookIcon}from '@mui/icons-material';
-function App(){
-    return(
-        <>
-          <Container
+import { Google as GoogleIcon, Facebook as FacebookIcon } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+
+function Homeofmedium() {
+  const navigate = useNavigate();
+
+  const Redirectbutton = () => {
+    navigate('/main');
+  };
+
+  return (
+    <Container
       maxWidth="xs"
       sx={{
         display: 'flex',
@@ -22,6 +30,7 @@ function App(){
 
       <Box my={3} width="100%">
         <Button
+          onClick={Redirectbutton}
           variant="contained"
           color="primary"
           fullWidth
@@ -53,9 +62,7 @@ function App(){
         </Button>
       </Box>
     </Container>
-        </>
-            
-    );
-    
+  );
 }
-export default App;
+
+export default Homeofmedium;

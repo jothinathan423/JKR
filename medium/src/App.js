@@ -16,12 +16,9 @@ function EmailPage() {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<CenteredLogin />} />
-        <Route path="/email" element={<EmailPage />} />
-      </Routes>
-    </Router>
+    <div style={styles.container}>
+      <Login />
+    </div>
   );
 }
 
@@ -45,3 +42,4 @@ const styles = {
 };
 
 export default App;
+export {EmailPage}
