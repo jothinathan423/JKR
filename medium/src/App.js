@@ -1,25 +1,47 @@
-// import logo from './logo.svg';
-// import './App.css';
+/* global gapi */
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import Login from './login';
 
-function App() {
+function EmailPage() {
+  const location = useLocation();
+  const email = location.state?.email || 'No email found';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <p>{email}</p>
     </div>
   );
 }
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<CenteredLogin />} />
+        <Route path="/email" element={<EmailPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+// Centered Login component
+function CenteredLogin() {
+  return (
+    <div style={styles.container}>
+      <Login />
+    </div>
+  );
+}
+
+const styles = {
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+    backgroundColor: '#f0f0f0' // Optional background color
+  }
+};
 
 export default App;
